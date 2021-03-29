@@ -1,0 +1,588 @@
+@import "../../assets/Fonts/Lato/Lato/latofonts.css";
+@import "../../assets/Fonts/WebFonts/style.css";
+@import 'variables/variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 0 !important;
+    margin: 0;
+}
+
+.bc_fluid{
+    // background-color: $bc__color;
+    height: 100%;
+    // width: 100%;
+
+    .col-md-8{
+        // padding: 25vh 0 10rem 0rem;
+        padding-top: 20vh;
+        padding-bottom: 10rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .sign-in{
+        margin-top: 100%;
+        // margin-left: -10px;
+        color: $primary__color;
+        height: 50px;
+        width: 130px;
+        border-radius: 25px;
+        letter-spacing: 1px;
+        border: 2px solid transparent;
+        outline: none;
+        backface-visibility: hidden;
+        // background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+        background-image: linear-gradient(#42455A, #253141), radial-gradient(circle at top left, #fd00da, #19d7f8);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+        -webkit-background-clip: content-box, border-box;
+        -webkit-background-origin: border-box;
+        -moz-background-clip: content-box, border-box;
+        -moz-background-origin: border-box;
+                
+
+        &:hover{
+            margin-top: 100.5%;
+            margin-bottom: 1px;
+            height: 48px;
+            width: 129px;
+            border-radius: 24px;
+            box-shadow: none;
+        }
+    }
+
+    
+
+    #developer{
+        font-size: 16px;
+        font-family: 'LatoWeb';
+        color: $text__color;
+        letter-spacing: 1px;
+    }
+
+    #credits{
+        color: $bc__color;
+        letter-spacing: 1px;
+        font-family: 'LatoWeb';
+    }
+
+    #gis{
+        color: $text__color;
+        letter-spacing: 1px;
+        font-family: 'LatoWeb';
+    }
+
+    @media screen and (max-width: 992px){
+        .sign-in{
+            margin-top: 60%;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+
+        .sign-in{
+            margin-top: 10%;
+
+            &:hover{
+                margin-top: 10.2%;
+                margin-bottom: 1px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 414px){
+
+        // .col-md-8{
+    
+        //     .cubes{
+        //         margin-bottom: 30%;
+        //     }
+        // }
+        // .sign-in{
+        //     margin-top: -40%;
+        // }
+
+        #developer, #credits, #gis{
+            font-size: 13px;
+        }
+    }
+}
+
+.cd-section{
+
+    .cd-modal{
+
+        .cd-modal-content{
+
+            .col-md-8{
+
+                form{
+                    margin-bottom: 25px;
+
+                    div{
+                        height: 50px;
+                        border: 2px solid transparent;
+                        background-image: linear-gradient(#42455A, #253141), radial-gradient(circle at top left, #fd00da, #19d7f8);
+                        border-radius: 25px;
+                        overflow: hidden;
+                        margin-bottom: 10px;
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;
+                        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+                        -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+                        -webkit-background-clip: content-box, border-box;
+                        -webkit-background-origin: border-box;
+                        -moz-background-clip: content-box, border-box;
+                        -moz-background-origin: border-box;
+    
+                        input{
+                            border: none;
+                            outline: none;
+                            box-shadow: none;
+                            height: 50px;
+                            border-radius: 25px;
+                            background-image: linear-gradient(#253141, #42455A, #253141);
+                            padding-left: 25px;
+                            padding-right: 25px;
+                            font-size: 16px;
+                            letter-spacing: 0.1rem;
+                            font-family: 'LatoWeb';
+                            color: $text__color;
+                        }
+                    }
+
+                    .login{
+                        margin-top: 10%;
+                        margin-left: -10px;
+                        color: $primary__color;
+                        height: 50px;
+                        width: 130px;
+                        border-radius: 25px;
+                        letter-spacing: 1px;
+                        border: 2px solid transparent;
+                        outline: none;
+                        backface-visibility: hidden;
+                        background-image: linear-gradient(#42455A, #253141), radial-gradient(circle at top left, #fd00da, #19d7f8);
+                        background-origin: border-box;
+                        background-clip: content-box, border-box;
+                        box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+                        -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.3);
+                        -webkit-background-clip: content-box, border-box;
+                        -webkit-background-origin: border-box;
+                        -moz-background-clip: content-box, border-box;
+                        -moz-background-origin: border-box;
+                                
+                
+                        &:hover{
+                            margin-top: 10.5%;
+                            margin-bottom: 2px;
+                            height: 48px;
+                            width: 129px;
+                            border-radius: 24px;
+                            box-shadow: none;
+                        }
+                    }
+                }
+
+                a{
+                    text-align: center;
+                    font-family: 'LatoWeb';
+                    color: $text__color;
+
+                    &:hover{
+                        color: $secondary__color;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.calendar{
+    height: 100vh !important;
+    width: 100%;
+    background-image: url(../../assets/img/wp2598246.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1% 10%;
+    font-family: 'LatoWeb' !important;
+
+    #CalendarNew{
+        background-color: #fff;
+        padding: 15px 20px;
+        border-radius: 3px;
+        height: 100% !important;
+        margin-bottom: 50px !important;
+
+        .fc-toolbar{
+
+            .fc-left{
+
+                .fc-button-group{
+                    height: 50px;
+                    border-radius: 3px;
+                    letter-spacing: 1px;
+                    border: 1px solid transparent;
+                    outline: none;
+                    backface-visibility: hidden;
+                    overflow: hidden;
+                    background-image: linear-gradient(to bottom, #363950, #192533, #101822), radial-gradient(circle at top left, #fd00da, #19d7f8);
+                    background-origin: border-box;
+                    background-clip: content-box, border-box;
+                    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                    -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                    -webkit-background-clip: content-box, border-box;
+                    -webkit-background-origin: border-box;
+                    -moz-background-clip: content-box, border-box;
+                    -moz-background-origin: border-box;
+                }
+
+                button{
+                    height: 46px;
+                    background-color: transparent;
+                    border: none;
+                    box-shadow: none;
+                    color: #fff;
+                    text-shadow: none;
+                    text-transform: uppercase;
+
+                    &:hover{
+                        background: linear-gradient(to bottom, #42455A, #2f3d4e, #253141);
+                    }
+                }
+
+                .fc-today-button{
+                    background-image: linear-gradient(to bottom, #363950, #192533, #101822) !important;
+                }
+
+                .fc-corner-left{
+                    border-top-left-radius: 23px;
+                    border-bottom-left-radius: 23px;
+                    border-right: 1px solid #2f3d4e;
+                    width: 100px;
+                }
+
+                .fc-corner-right{
+                    border-top-right-radius: 23px;
+                    border-bottom-right-radius: 23px;
+                    border-left: 1px solid #2f3d4e; 
+                    width: 100px; 
+                }
+
+                .fc-prev-button, .fc-next-button{
+                    width: 80px;
+                    background: transparent;
+                    outline: none;
+                }
+            }
+
+            .fc-right{
+                height: 50px;
+                border-radius: 3px;
+                letter-spacing: 1px;
+                border: 1px solid transparent;
+                outline: none;
+                backface-visibility: hidden;
+                overflow: hidden;
+                background-image: linear-gradient(to bottom, #363950, #192533, #101822), radial-gradient(circle at top left, #fd00da, #19d7f8);
+                background-origin: border-box;
+                background-clip: content-box, border-box !important;
+                box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                -webkit-background-clip: content-box, border-box;
+                -webkit-background-origin: border-box;
+                -moz-background-clip: content-box, border-box;
+                -moz-background-origin: border-box;
+
+                button{
+                    height: 50px;
+                    width: 100px;
+                    margin-left: 0px !important;
+                    height: 46px;
+                    border-radius: 0px;
+                    border: none;
+                    background: transparent;
+                    box-shadow: none;
+                    text-shadow: none;
+                    color: #f1f1f1;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 100;
+
+                    &:hover{
+                        background: linear-gradient(to bottom, #42455A, #2f3d4e, #253141);
+                    }
+                }
+
+                .fc-month-button{
+                    margin-right: 0px !important;
+                    outline: none;
+                }
+
+                .fc-basicWeek-button{
+                    outline: none;
+                }
+
+                .fc-basicDay-button{
+                    outline: none;
+                }
+
+                .fc-agendaWeek-button{
+                    outline: none;
+                }
+
+                .fc-agendaDay-button{
+                    outline: none;
+                    border-right: 1px solid #2f3d4e;
+                }
+
+                .fc-listWeek-button{
+                    outline: none;
+                }
+                
+                .fc-month-button, .fc-agendaWeek-button, .fc-basicDay-button, .fc-basicWeek-button{
+                    border-right: 1px solid #2f3d4e;
+                    outline: none;
+                }
+            }
+
+            .fc-center{
+                height: 50px;
+                border-radius: 3px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                border: 1px solid transparent;
+                outline: none;
+                backface-visibility: hidden;
+                overflow: hidden;
+                background-image: linear-gradient(to bottom, #363950, #192533, #101822), radial-gradient(circle at top left, #fd00da, #19d7f8);
+                background-origin: border-box;
+                background-clip: content-box, border-box !important;
+                box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                -webkit-background-clip: content-box, border-box;
+                -webkit-background-origin: border-box;
+                -moz-background-clip: content-box, border-box;
+                -moz-background-origin: border-box;
+
+                h2{
+                    padding: 13px 20px;
+                    color: #e2e2e2;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .fc-view-container{
+            font-family: "LatoWeb";
+            text-transform: uppercase;
+            margin-top: -5px;
+
+            .fc-view{
+                border: 2px solid #101822 !important;
+                box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.7);
+                // height: 100% !important;
+                overflow-y: auto !important;
+                padding: 15px 20px;
+                
+                table{
+                    // height: 75vh;
+
+                    thead{
+
+                        tr{
+
+                            th{
+                                padding: 14px;
+                                background: linear-gradient(to bottom, #2f3d4e, #253141);
+                                opacity: 1 !important;
+                                vertical-align: middle;
+                                font-weight: bold;
+                                color: #fff;
+                                font-size: 20px;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                            }
+
+                            .fc-axis.fc-widget-header{
+                                width: 22px !important;
+                            }
+
+                            .fc-sun{
+                                color: #ec8080;
+                            }
+
+                            .fc-mon, .fc-tue, .fc-wed, .fc-thu, .fc-fri{
+                                color: #b1afaf;
+                            }
+
+                            .fc-sat{
+                                color: #6e99f5;
+                            }
+                        }
+                    }
+
+//                     tbody{
+
+//                         tr{
+
+//                             td{
+//                                 font-weight: 100;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 .fc-scroller{
+//                     height: 100% !important;
+
+//                     .fc-list-table{
+
+//                         tbody{
+
+//                             .fc-list-heading{
+    
+//                                 .fc-widget-header{
+//                                     background: linear-gradient(to bottom, #2f3d4e, #253141) !important;
+//                                     color: #fff;
+//                                 }
+//                             }
+    
+//                             tr.fc-list-item{
+//                                 height: 0px !important;
+//                                 margin: 0px !important;
+
+//                                 td{
+//                                     padding-bottom: 0px !important;
+//                                     margin: 0px !important;
+//                                 }
+//                             }
+//                         }
+//                     }
+
+//                     .fc-day-grid{
+
+//                         .fc-bg{
+
+//                             table{
+    
+//                                 tbody{
+    
+//                                     tr{
+                                        
+//                                         td{
+//                                             height: 30px !important;
+
+//                                             span{
+//                                                 margin-top: 0px !important;
+//                                             }
+//                                         }
+    
+//                                         // .fc-axis{
+                                            
+//                                         // }
+    
+//                                         // .fc-day{
+//                                         //     height: 30px !important;
+//                                         // }
+//                                     }
+//                                 }
+//                             }
+//                         }
+
+//                         .fc-content-skeleton{
+
+//                             table{
+                                
+//                                 tbody{
+
+//                                     tr{
+//                                         .fc-content{
+//                                             padding: 3px 5px !important;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+
+//                     .fc-time-grid{
+                        
+//                         .fc-slats{
+
+//                             table{
+
+//                                 tbody{
+
+//                                     tr{
+                                        
+//                                         td{
+//                                             height: 30px !important;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+                }
+            }
+        }
+    }
+ }
+
+.modal{
+
+    .modal-dialog{
+
+        .modal-header{
+            height: 68px;
+            background: linear-gradient(to bottom, #2f3d4e, #253141) !important;
+            color: #fff;
+            box-shadow: 1px 2px 7px rgba(0, 0, 0, 0.5);
+
+            #eventTitle{
+                margin-top: 5px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            .close{
+                position: relative;
+                top: -28px;
+                color: #f54545;
+            }
+        }
+
+        .modal-body{
+            height: 100%;
+            padding: 10px 20px;
+
+            input{
+                border-radius: 0px !important;
+            }
+
+            span{
+                letter-spacing: 1px;
+                margin-top: -15px;
+            }
+
+            .clockpicker{
+                width: 100% !important;
+            }
+        }
+
+        .modal-footer{
+            border-bottom-right-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+        }
+    }
+}

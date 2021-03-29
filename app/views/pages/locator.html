@@ -1,0 +1,710 @@
+
+    <div class="locator">
+        <div class="content">
+            <center>
+                <h4 class="">
+                    <i><img src="<?= base_url(); ?>assets/img/Ojt-ID_BACK.jpg" alt=""></i>&nbsp;
+                    <span>G</span>EOGRAPHIC
+                    <span>I</span>NFORMATION
+                    <span>S</span>YSTEM
+                    <span>T</span>ECHNOLOGY
+                    <span>C</span>ENTER
+                    <i class="nc-icon nc-square-pin"></i>
+                </h4>
+            </center>
+            <h2 class="text-center" style="position: relative; top: -10px;">
+                FACULTY & STAFF LOCATOR &nbsp;
+            </h2>
+            <div class="container" style="position: relative; border: none; background-color: transparent; top: -20px;">
+                <div class="row">
+                    <div class="col-md-6" align="right" >
+                        <span class="" style="font-size: 17px; color: #0da8c4; letter-spacing: 0.01rem;">
+                            <span style="color: #464545; text-transform: uppercase;">DATE : </span>
+                            <span style="font-size: 18px; letter-spacing: 0.03rem;">
+                                <?= date("D, M. d, Y"); ?>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="col-md-6" align="left">
+                        <span style="color: #464545; font-size: 17px;"> LOCAL TIME : </span>
+                        <span class="" id="time" style="font-size: 19px; color: #13C3E2; letter-spacing: 0.04rem;">
+                        </span>
+                    </div>
+                </div>
+                <p class="text-center" style='margin-left: -20px;'>
+                    Developed by: <a href="#">Benigno E. Ambus Jr.</a> @ SLSU-GISTC
+                </p>
+            </div>
+            <div class="container tables" style="margin-bottom: 30px;">
+                <div class="col-md-12" style='margin-bottom: -16px; background: transparent'>
+                    <table class="table tbl-outside" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="50%">
+                                    <span>OFFICE PERSONNELS</span>
+                                </th>
+                                <th class="text-center" width="10%">
+                                    <span>IN</span>
+                                </th>
+                                <th class="text-center" width="10%">
+                                    <span>OUT</span>
+                                </th>
+                                <th width="15%">
+                                    <span>REMARKS</span>
+                                </th>
+                                <th width="15%">
+                                    <span>LOCATION</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <tr>
+                                <td>
+                                    <table class="table-bordered" width="100%">
+                                        <tr>
+                                            <td width="17%" style='padding-top: 3px; padding-bottom: 3px;'>
+                                                <img class="img" src="<?= base_url(); ?>light-dashboard/assets/img/Padao63168.jpg" alt="">
+                                            </td>
+                                            <td>
+                                                <h5>FRANCIS REY F. PADAO</h5>
+                                                <span>Director, GIS Technology Center</span>
+                                            </td>  
+                                        </tr>
+                                    </table>
+                                </td>
+                                <?php
+                                if(!empty($data))
+                                {
+                                    foreach($data as $key => $value)
+                                    {
+                                        if($value->date_log == date("D, M/d/Y"))
+                                        { 
+                                            if($value->school_id == "086")
+                                            {
+                                                ?>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_in")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>  
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%" height="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_out")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks"><?php echo $value->destination; ?></span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks">GIS Tech Center Office</span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>       
+                            </tr>
+                            <tr >
+                                <td>
+                                    <table class="table-bordered" width="100%">
+                                        <tr>
+                                            <td width="17%" style='padding-top: 3px; padding-bottom: 3px;'>
+                                                <img class="img" src="<?php echo base_url(); ?>light-dashboard/assets/img/Napalan63280.jpg" alt="">
+                                            </td>
+                                            <td>
+                                                <h5>JEROME JACK O. NAPALA</h5>
+                                                <span>SRS II</span>
+                                            </td>  
+                                        </tr>
+                                    </table>
+                                </td>
+                                <?php
+                                if(!empty($data))
+                                {
+                                    foreach($data as $key => $value)
+                                    {
+                                        if($value->date_log == date("D, M/d/Y"))
+                                        { 
+                                            if($value->school_id == "203")
+                                            {
+                                                ?>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_in")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>  
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%" height="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_out")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks"><?php echo $value->destination; ?></span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks">GIS Tech Center Office</span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="table-bordered" width="100%">
+                                        <tr>
+                                            <td width="17%" style='padding-top: 3px; padding-bottom: 3px;'>
+                                                <img class="img" src="<?php echo base_url(); ?>light-dashboard/assets/img/Oraño63606.jpg" alt="">
+                                            </td>
+                                            <td>
+                                                <h5>ARNEDA JEAN S. GONZALES</h5>
+                                                <span>Core Faculty</span>
+                                            </td>  
+                                        </tr>
+                                    </table>
+                                </td>
+                                <?php
+                                if(!empty($data))
+                                {
+                                    foreach($data as $key => $value)
+                                    {
+                                        if($value->date_log == date("D, M/d/Y"))
+                                        { 
+                                            if($value->school_id == "312")
+                                            {
+                                                ?>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_in")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>  
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%" height="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_out")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks"><?php echo $value->destination; ?></span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks">GIS Tech Center Office</span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="table-bordered" width="100%">
+                                        <tr>
+                                            <td width="17%" style='padding-top: 3px; padding-bottom: 3px;'>
+                                                <img class="img" src="<?php echo base_url(); ?>light-dashboard/assets/img/Oraño63606.jpg" alt="">
+                                            </td>
+                                            <td>
+                                                <h5>JANNIE FLEUR V. ORANO</h5>
+                                                <span>Core Faculty</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <?php
+                                if(!empty($data))
+                                {
+                                    foreach($data as $key => $value)
+                                    {
+                                        if($value->date_log == date("D, M/d/Y"))
+                                        { 
+                                            if($value->school_id == "302")
+                                            {
+                                                ?>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_in")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>  
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%" height="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_out")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks"><?php echo $value->destination; ?></span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks">GIS Tech Center Office</span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="table-bordered" width="100%">
+                                        <tr>
+                                            <td width="17%" style='padding-top: 3px; padding-bottom: 3px;'>
+                                                <img class="img" src="<?php echo base_url(); ?>light-dashboard/assets/img/Tagud63563.jpg" alt="">
+                                            </td>
+                                            <td>
+                                                <h5>JORTON A. TAGUD</h5>
+                                                <span>Core Faculty</span>
+                                            </td>  
+                                        </tr>
+                                    </table>
+                                </td>
+                                <?php
+                                if(!empty($data))
+                                {
+                                    foreach($data as $key => $value)
+                                    {
+                                        if($value->date_log == date("D, M/d/Y"))
+                                        { 
+                                            if($value->school_id == "322")
+                                            {
+                                                ?>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_in")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center success" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>  
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%" height="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_out")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks"><?php echo $value->destination; ?></span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks">GIS Tech Center Office</span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="table-bordered" width="100%">
+                                        <tr>
+                                            <td width="17%" style='padding-top: 3px; padding-bottom: 3px;'>
+                                                <img class="img" src="<?php echo base_url(); ?>light-dashboard/assets/img/Bermoy63283.jpg" alt="">
+                                            </td>
+                                            <td>
+                                                <h5>JOVIL D. BERMOY</h5>
+                                                <span>Clerk [JO]</span>
+                                            </td>  
+                                        </tr>
+                                    </table>
+                                </td>
+                                <?php
+                                if(!empty($data))
+                                {
+                                    foreach($data as $key => $value)
+                                    {
+                                        if($value->date_log == date("D, M/d/Y"))
+                                        { 
+                                            if($value->school_id == "300")
+                                            {
+                                                ?>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_in")
+                                                                        {
+                                                                            ?>
+                                                                                <center>
+                                                                                    <i class="nc-icon nc-pin-3 text-center success"></i>
+                                                                                </center>
+                                                                            <?php
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            ?>
+                                                                                <center>
+                                                                                    <i class="nc-icon nc-pin-3 text-center success" style="visibility: hidden !important;"></i>
+                                                                                </center>
+                                                                            <?php
+                                                                        }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>  
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%" height="100%">
+                                                            <tr>
+                                                                <td>
+                                                                    <?php 
+                                                                    if($value->log_type == "log_out")
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        ?>
+                                                                            <center>
+                                                                                <i class="nc-icon nc-pin-3 text-center danger" style="visibility: hidden !important;"></i>
+                                                                            </center>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="remarks"><?php echo $value->destination; ?></span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <table class="table-bordered" width="100%">
+                                                            <tr>
+                                                                <td width="17%">
+                                                                    <br>
+                                                                    <span class="">GIS Tech Center Office</span>
+                                                                    <br>
+                                                                    <br>
+                                                                </td>  
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                <?php
+                                           }
+                                        }
+                                    }
+                                }
+                                ?>
+                            </tr>
+                            <tr><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
